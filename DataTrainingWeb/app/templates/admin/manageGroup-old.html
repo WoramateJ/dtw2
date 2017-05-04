@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manange group</title>
+</head>
+<body>
+  <div class="login">
+    {{ msg }}
+    <form action="{% url 'app:addGroup' %}" method="post">{% csrf_token %}
+      <input type="text" placeholder="Group name" name="groupName"><br>
+      <input type="text" placeholder="id1, id2, id3..." name="ids"><br>
+      <input type="checkbox" name="visible" value="check" >Show<br>
+      <input type="submit" value="Add Group">
+    </form>
+  </div>
+  <table class="table table-responsive">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Group</th>
+        <th>Post List</th>
+        <th>Visible</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for group in groups %}
+      {% for l in }
+        <tr>
+          <td>{{ group.name }}</td>
+          <td>{{ group.post }}</td>
+          <td>
+          </td>
+          <td>
+            <form action="{% url 'app:deleteGroup' %}" method="post">{% csrf_token %}
+              <button name="group_name" value="{{ group.name }}">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

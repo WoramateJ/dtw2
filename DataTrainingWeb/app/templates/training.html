@@ -1,0 +1,64 @@
+{% extends "base_navigation_template.html" %}
+
+{% block content %}
+<div class="ui blue inverted progress">
+  <div class="bar">
+     <div class="progress"></div>
+  </div>
+</div>
+
+<div class="ui raised very padded center aligned text container inverted segment">
+  <p>This is the box of Sentences.</p>
+</div>
+
+<div class="ui two column stackable page grid">
+  <div class="right floated left aligned six wide column">
+    <div class="ui compact inverted circular segment">
+      <h2 class="ui header">Word</h2>
+    </div>
+  </div>
+
+  <div class="right aligned four wide column">
+    <button class="massive ui circular icon inverted pink button">
+      <i class="chevron right icon"></i>
+    </button>
+  </div>
+</div>
+
+<div class="ui two column stackable page grid">
+  <div class="right floated left aligned two wide column">
+    <select class="ui search dropdown">
+      <option value="">POS</option>
+      <option value="npn">npn</option>
+      <option value="ncn">ncn</option>
+      <option value="n">noun</option>
+      <option value="pron">pron</option>
+      <option value="vi">vi</option>
+      <option value="vt">vt</option>
+      <option value="verb">verb</option>
+      <option value="det">det</option>
+      <option value="adj">adj</option>
+      <option value="adv">adv</option>
+      <option value="advm1">advm1</option>
+      <option value="cl">cl</option>
+      <option value="conj">conj</option>
+      <option value="prep">prep</option>
+      <option value="int">int</option>
+      <option value="pref">pref</option>
+      <option value="part">part</option>
+      <option value="neg">neg</option>
+      <option value="punc">punc</option>
+      <option value="idm">idm</option>
+      <option value="psm">psm</option>
+      <option value="sym">sym</option>
+    </select>
+  </div>
+
+  <div class="left aligned eight wide column">
+    <button class="ui icon button">
+      <i class="checkmark icon"></i>
+    </button>
+  </div>
+</div>
+
+{% endblock %}

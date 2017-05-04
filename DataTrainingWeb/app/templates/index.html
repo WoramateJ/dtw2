@@ -1,0 +1,29 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+
+<div class="ui one column stackable center aligned page grid">
+  <div class="column twelve wide">
+    <h1>DATA TRAINING</h1>
+    <h3>{{ msg }}<h3>
+      <form action="{% url 'app:doLogin' %}" method="post">{% csrf_token %}
+        <div class="ui form">
+          <div class="field">
+            <div class="ui left icon input">
+              <input type="text" placeholder="Username" name="Lusername">
+              <i class="user icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <input type="password" placeholder="password" name="Lpassword">
+              <i class="lock icon"></i>
+            </div>
+          </div>
+          <input type="submit" value="LOGIN" class="ui blue submit button">
+        </div>
+      </form>
+  </div>
+</div>
+
+{% endblock %}

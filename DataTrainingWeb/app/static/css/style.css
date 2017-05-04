@@ -1,0 +1,50 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: #000000;
+  background-size: 100%;
+  background-color: #523058;
+  /*background-color: #BD9CB7;
+  background-repeat:no-repeat;
+  background-image: linear-gradient(to bottom, #523058 37%, white 100%);
+  background-blend-mode: darken;*/
+}
+
+.center-groupbtn {
+    margin: 90px 0 0 90px;
+}
+
+.col-lg-4 {
+	float: left;
+    width: 33.33333333%;
+}
+
+.mybody {
+	margin-top:5%;
+	margin-left:10%;
+	margin-right:10%;
+	margin-bottom: 12%;
+}
+
+.navigation-bar {
+	height: 65px;
+	background-color: #DA7E7E;
+}
+
+.menu-position {
+  	padding-top: 20px;
+  	padding-right: 20px;
+}
+
+.opengroup-color {
+	background-color: #A8BACF;
+}
+
+.puton {
+  position: absolute;
+}

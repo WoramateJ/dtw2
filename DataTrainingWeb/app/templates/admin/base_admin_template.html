@@ -1,0 +1,32 @@
+{% extends "base_template.html" %}
+
+{% block add_content %}
+<div class="ui stackable grid">
+
+  <div class="three wide column">
+    <div class="ui visible inverted left vertical sidebar menu">
+      <a class="item">
+        <i class="user icon"></i>
+        ADMIN
+      </a>
+      <a class="item" href={% url 'app:manageGroup' %}>
+        {% csrf_token %}
+        <i class="block layout icon"></i>
+        Manage Groups
+      </a>
+      <a class="item" href={% url 'app:manageStudent' %}>
+        <i class="smile icon"></i>
+        Manage Students
+      </a>
+    </div>
+  </div>
+
+  <div class="thirteen wide column">
+    <div class="ui basic segment">
+      {% block admin_content %}
+      {% endblock %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

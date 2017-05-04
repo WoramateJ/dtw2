@@ -1,0 +1,86 @@
+{% extends "base_navigation_template.html" %}
+
+{% block content %}
+    <section>
+        <h1 class="ui center aligned icon header" style="color:#F5F5F5">
+          <img src="../static/images/pantip-icon.png" style="height: 17%; width: 17%">
+            <div class="header" style="padding-top: 20px">
+              Select the forum group!
+            </div>
+            <div>{{ msg }}</div>
+        </h1>
+
+        <div class="ui three column grid">
+          <div class="row">
+            {% for group in groups %}
+              <div class="column">
+                <form action="{% url 'app:selectGroup' %}" method="post">{% csrf_token %}
+                  <div class="center-groupbtn">
+                    <button class="massive ui inverted blue button" name="selectedGroup" value="{{ group.name }}">{{ group.name }}</button>
+                  </div>
+                </form>
+              </div>
+            {% endfor %}
+
+            <!-- <div class="column">
+              <form action="{% url 'app:training' %}" method="post">
+              {% csrf_token %}
+                <div class="center-groupbtn">
+                  <button class="massive ui inverted blue button">Group 2</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="column">
+              <form action="{% url 'app:training' %}" method="post">
+              {% csrf_token %}
+                <div class="center-groupbtn puton">
+                    <button class="massive ui disabled inverted blue button">
+                      <i class="lock icon"></i>
+                      Group 3
+                    </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="column">
+              <form action="{% url 'app:training' %}" method="post">
+              {% csrf_token %}
+                <div class="center-groupbtn">
+                    <button class="massive ui disabled inverted blue button">
+                      <i class="lock icon"></i>
+                      Group 4
+                    </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="column">
+              <form action="{% url 'app:training' %}" method="post">
+              {% csrf_token %}
+                <div class="center-groupbtn">
+                    <button class="massive ui disabled inverted blue button" value="5">
+                      <i class="lock icon"></i>
+                      Group 5
+                    </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="column">
+              <form action="{% url 'app:training' %}" method="post">
+              {% csrf_token %}
+                <div class="center-groupbtn">
+                    <button class="massive ui disabled inverted blue button">
+                      <i class="lock icon"></i>
+                      Group 6
+                    </button>
+                </div>
+              </form>
+            </div> -->
+
+          </div>
+        </div>
+    </section>
+
+{% endblock %}

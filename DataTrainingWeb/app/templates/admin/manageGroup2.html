@@ -1,0 +1,41 @@
+{% extends "admin/base_admin_template.html" %}
+
+{% block admin_content %}
+  <div>
+    {{ msg }}
+    <form action="{% url 'app:addGroup' %}" method="post">
+      {% csrf_token %}
+      <input type="text" placeholder="Group name" name="groupName"><br>
+      <input type="text" placeholder="id1, id2, id3..." name="ids"><br>
+      <input type="checkbox" name="visible" value="visible">Show<br>
+      <!-- <input type="text" placeholder="id 1" name="id1"><br>
+      <input type="text" placeholder="id 2" name="id2"><br>
+      <input type="text" placeholder="id 20" name="id3"><br> -->
+      <input type="submit" value="Add Group">
+    </form>
+  </div>
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>Group</th>
+        <th>Post List</th>
+        <th>Visible</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for group in groups %}
+        <tr>
+          <td>{{ group.name }}</td>
+          <td>{{ group.post }}</td>
+          <td>{{ group.Visible }}</td>
+          <td>
+            <form action="{% url 'app:deleteStd' %}" method="post">
+              {% csrf_token %}
+              <button name="std_name" value="{{ std.name }}">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table> -->
+{% endblock %}

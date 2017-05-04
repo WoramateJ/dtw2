@@ -1,0 +1,27 @@
+{% extends "base_template.html" %}
+
+{% block navigation %}
+<section class="navigation-bar">
+  <div class="menu-position">
+    <div class="ui secondary menu">
+      <div class="right menu">
+        <div class="ui horizontal list">
+          <div class="item">
+            <i class="circular user purple icon"></i>
+              <div class="content" style="padding-right: 10px">
+                <div class="ui header" style="color: white">{{ name }}</div>
+              </div>
+          </div>
+        </div>
+
+        <form action="{% url 'app:login' %}" method="post">
+            {% csrf_token %}
+          <button class="ui inverted grey button">
+            Logout
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
